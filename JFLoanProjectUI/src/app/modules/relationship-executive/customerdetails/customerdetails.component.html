@@ -1,0 +1,74 @@
+
+  <form action="#" name="form1">
+        <h1><b><i>Customer Details</i></b></h1>
+  
+    <div>
+      <label for="FName">* First Name </label>
+      <input type="text" maxlength="12" id="FName" name="first_name" [ngModelOptions]="{standalone:true}"[(ngModel)]="customerdetails.first_name" pattern="[A-Za-z]" required>
+    <label>(Only alphabate required)</label>
+    </div>
+    
+    <div>
+      <label for="LName">* Last Name</label>
+      <input type="text" id="LName" name="last_name" [ngModelOptions]="{standalone:true}"[(ngModel)]="customerdetails.last_name">
+      <label>(Only alphabate required)</label>  
+    </div>
+   
+    <div>
+      <label for="Address">* Address</label>
+      <input type="textarea" id="Address" name="address" [(ngModel)]="customerdetails.address"> 
+    </div>
+    <div>
+        
+      <label for="MobileNo">* MobileNumber: </label>
+       <input type="tel" id="MobileNo" pattern="^\d{4}-\d{3}-\d{4}$" name="mobile_number" [ngModelOptions]="{standalone:true}" [(ngModel)]="customerdetails.mobile_number" required>
+       <label>(format: xxxx-xxx-xxxx)</label>
+      </div>
+    <div>
+      <label for="Email">* Email: </label>
+       <input type="email" id="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" name="email_id" [ngModelOptions]="{standalone:true}"[(ngModel)]="customerdetails.email_id" required>
+       <label>(format: @gmail.com)</label>
+      </div>
+    <div>
+      <label for="DateOfBirth">* DateOfBirth</label>
+      <input type="date" id="DateOfBirth" [ngModelOptions]="{standalone:true}"[(ngModel)]="customerdetails.dob"> 
+    </div>
+    <div>
+      <label for="Age">Age</label>
+       <input type="text" id="Age" name="age" [ngModelOptions]="{standalone:true}" [(ngModel)]="customerdetails.age" required> 
+    </div>
+    <div>
+      <label for="Profession">* Profession</label>
+       <input type="text" id="Profession" name="profession" [ngModelOptions]="{standalone:true}" [(ngModel)]="customerdetails.profession" required>
+
+    </div>
+      <div>
+      <label for="gender">* Gender: </label>
+        <label for="male">Male</label>
+        <input type="radio" name="gender" id="male" value="male" [ngModelOptions]="{standalone:true}" checked [(ngModel)]="customerdetails.gender">
+        <label for="female">Female</label>
+        <input type="radio" name="gender" id="female" value="female" [ngModelOptions]="{standalone:true}" [(ngModel)]="customerdetails.gender">
+      </div>
+      <div>
+        <label for="Recidential Type">Recidential Type</label>
+         <input type="text" id="Recidencial Type" name="recidential_type" [ngModelOptions]="{standalone:true}" [ngModelOptions]="{standalone:true}" [(ngModel)]="customerdetails.recidential_type" required>
+  
+      </div>
+      <div>
+        <label for="MaritalStatus">Marital Status: </label>
+          <label for="Single">Single</label>
+          <input type="radio" name="marital_status" id="Single" value="Single" [ngModelOptions]="{standalone:true}" checked [(ngModel)]="customerdetails.marital_status"> 
+          <label for="Married">Married</label>
+          <input type="radio" name="marital_status" id="Married" value="Married" [ngModelOptions]="{standalone:true}"  [(ngModel)]="customerdetails.marital_status">
+        </div>
+      <div>
+        <label for="Lead Number">Lead Number</label>
+         <input type="number" id="Lead Number" name="leadnumber" [ngModelOptions]="{standalone:true}"[(ngModel)]="customerdetails.leadnumber" required>
+  
+      </div>
+    <div>
+      <input type="submit" value="Submit" id='Submit' (click)="customerSave(customerdetails)">
+      <input type="submit" value="Cancel" id='Cancel'>
+      
+    </div>
+  </form>
